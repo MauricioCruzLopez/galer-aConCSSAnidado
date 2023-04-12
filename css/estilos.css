@@ -1,0 +1,26 @@
+body{
+    display:grid;
+    grid-template: 
+    "header" 100px
+    "main" auto
+    "footer" 50px /
+    100%;
+
+    #main{
+        #galeria{
+            display:grid;
+            grid-auto-rows:300px;
+            grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));
+            background-color:blue;
+
+            > img{
+                width: 100%;
+                position:relative;
+            }
+            > div{
+                opacity: 0;
+                position: absolute;
+            }
+        }
+    }
+}
