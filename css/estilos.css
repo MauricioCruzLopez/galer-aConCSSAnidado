@@ -10,17 +10,36 @@ body{
         #galeria{
             display:grid;
             grid-auto-rows:300px;
-            grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));
+            grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
             background-color:blue;
-
-            > img{
+            
+            .arte{
                 width: 100%;
+                height: 100%;
+                overflow: hidden;
                 position:relative;
-            }
-            > div{
-                opacity: 0;
-                position: absolute;
-            }
+
+                > .img-activado{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                }
+                > img-desactivado{
+                    display: none;
+                }
+
+                > div-desactivado{
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+                    position: absolute;
+                }
+                > div-activado{
+                    display: inline-block;
+                }
+
+            } 
+            
         }
     }
 }
