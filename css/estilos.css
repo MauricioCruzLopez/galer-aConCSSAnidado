@@ -6,18 +6,26 @@ body{
     "footer" 50px /
     100%;
 
+    background-color:blue;
+
+    #header{
+        font-size: 1.5em;
+        text-align: center;
+        color: aliceblue;
+    }
+
     #main{
         #galeria{
             display:grid;
             grid-auto-rows:300px;
             grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-            background-color:blue;
             
             .arte{
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
                 position:relative;
+                cursor: pointer;
 
                 > .img-activado{
                     width: 100%;
@@ -32,11 +40,15 @@ body{
                     position: absolute;
                 }
                 > .div-activado{
-                    display: block;
+                    display: grid;
+                    place-content: center;
+
                     width: 100%;
                     height: 100%;
+
                     background-color: rgb(186, 201, 188);
                     color: rgb(42, 165, 65);
+                    font-size: 1.5em;
                 }
 
             } 
