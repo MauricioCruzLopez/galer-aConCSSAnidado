@@ -24,9 +24,6 @@ body{
                     height: 100%;
                     position: absolute;
                 }
-                > img-desactivado{
-                    display: none;
-                }
 
                 > div-desactivado{
                     width: 100%;
@@ -35,7 +32,8 @@ body{
                     position: absolute;
                 }
                 > div-activado{
-                    display: inline-block;
+                    display: block;
+                    z-index: 9999;
                 }
 
             } 
