@@ -18,6 +18,8 @@ for (let index = 0; index < imagenes.length; index++) {
 }
 for (let index = 0; index < continesLosAutores.length; index++) {
     continesLosAutores[index].addEventListener("click", ()=>{ //da vuelta la carta para que se vea la imagen
+        continesLosAutores[index].classList.toggle("div-desactivado");
+        continesLosAutores[index].classList.toggle("div-activado");
         const imagenEliminada = imagenes[index];
         continesLosAutores[index].remove();
         galeria[index].appendChild(imagenEliminada);
