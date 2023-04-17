@@ -1,24 +1,28 @@
-const imagen1 = document.getElementById("imagen1");
-const art1eliminado = imagen1;
+const galeria = document.querySelectorAll("#galeria > .arte"); //son todas las cartas
+const imagenes = document.querySelectorAll("#galeria .img-activado"); //son todas las imagenes
+const continesLosAutores = document.querySelectorAll("#galeria img+div"); //son todos contenedores de las referencias de los autores
 
-const autor1 = document.getElementById("autor1");
-const autor1eliminado = autor1;
+for (let index = 0; index < imagenes.length; index++) {
+    imagenes[index].addEventListener("click",()=>{
+        const art1eliminado = imagenes[index];
+        imagenes[index].remove();
+        continesLosAutores[index].classList.toggle("div-desactivado");
+        continesLosAutores[index].classList.toggle("div-activado");
 
-const carta1 = document.getElementById("carta1");
-
-imagen1.addEventListener("click",()=>{ //da vuelta la carta para que se vea el autor
-    imagen1.remove();
-    autor1.classList.toggle("div-desactivado"); 
-    autor1.classList.toggle("div-activado");
-    if(autor1.parentElement === null){
-        carta1.appendChild(autor1eliminado);
-    }
-});
-autor1.addEventListener("click", ()=>{ //da vuelta la carta para que se vea la imagen
-    autor1.remove();
-    carta1.appendChild(art1eliminado);
-});     
-
-
+        if(continesLosAutores[index].parentElement === null){ //para una ves se borra el contenedor de autores se puede cargar de vuelta
+            const autor1eliminado = continesLosAutores[index];
+            galeria[index].appendChild(autor1eliminado);
+        }
+    });
+    
+}
+for (let index = 0; index < continesLosAutores.length; index++) {
+    continesLosAutores[index].addEventListener("click", ()=>{ //da vuelta la carta para que se vea la imagen
+        const imagenEliminada = imagenes[index];
+        continesLosAutores[index].remove();
+        galeria[index].appendChild(imagenEliminada);
+    });
+    
+}
 
 
